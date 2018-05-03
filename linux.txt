@@ -1,0 +1,5 @@
+1.diable notebook's keyboard
+  vi /boot/grub2/grub.cfg
+linux16 /vmlinuz-3.10.0-693.21.1.el7.x86_64 root=/dev/mapper/centos-root ro crashkernel=auto rd.lvm.lv=centos/root rd.lvm.lv=centos/swap rhgb quiet i8042.nokbd 
+
+--add i8042.nokbd
