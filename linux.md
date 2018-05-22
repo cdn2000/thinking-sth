@@ -15,4 +15,16 @@ find above line and add: i8042.nokbd.
     sudo systemctl set-default multi-user.target
     sudo systemctl set-default graphical.target
 
+### LANG 之迷
+我已经的/etc/locale.conf设置好了LANG,如下：  
+
+    LANG="zh_CN.UTF-8"
+但启动到命令行后，echo $LANG，变成了en_US.UTF-8  
+
+查原因后发现在/etc/profile.d/lang.sh中，作了修改。  
+
+当consoletype='VT'时，直接把LANG设置成en_us.  
+
+为验证这点，把启动切换到图形方式，LANG就不变了。zh_CN  
+
 
